@@ -10,4 +10,41 @@ en:
     home: "Welcome to the Fts Project Framgia"
     about:
       content: "About us"
+  hello: "Hello world"
+  users:
+    sign_up:
+      title: "Sign Up"
+      btn_signup: "Sign Up"
+      limit_char: "characters minimum"
+    edit:
+      title: "Edit"
+      notice_password: "(leave blank if you don't want to change it)"
+      notice_current_pw: "(we need your current password to confirm your changes)"
+      button_cancel: "Cancel my account"
+      confirm: "Are you sure?"
+      button_back: "Back"
+      button_submit: "Submit"
+      notice_cancel: "Cancel my account"
+      unhappy: "Unhappy?"
+    sign_in:
+      title: "Log in"
+      btn_signin: "Log in"
+    password:
+      title_edit: "Change your password"
+      title_forgot: "Forgot your password?"
+      forgot_pw: "Forgot your password?"
+      confirm:  "Didn't receive confirmation instructions?"
+      unlock: "Didn't receive unlock instructions?"
+      sign_in_with: "Sign in with"
+      btn_edit: "Change my password"
+      btn_forgot: "Send me reset password instructions"
+      confirm_edit: "Confirm new password"
+    unlock:
+      title: "Resend unlock instructions"
+      btn_resend: "Resend unlock instructions"
+    confirmation:
+      title: "Resend confirmation instructions"
+      btn_resend: "Resend confirmation instructions"
+
+
 
