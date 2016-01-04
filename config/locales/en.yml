@@ -6,6 +6,7 @@ en:
       about: "About"
       logo: "Framgia Test"
       footer: "This is footer"
+      confirm_delete: "Are you sure?"
   staticpages:
     home: "Welcome to the Fts Project Framgia"
     about:
@@ -16,6 +17,21 @@ en:
       title: "Sign Up"
       btn_signup: "Sign Up"
       limit_char: "characters minimum"
+    title:
+      home: "All users"
+      user_detail: "Show user"
+    table:
+      stt: "Stt"
+      mail: "Email"
+      total_exams: "Total Examps"
+      complete: "Complete"
+      uncomplete: "Uncomplete"
+      delete: "Delete"
+      viewdetail: "View"
+      view: "View"
+    delete:
+      delete_user_flash_success: "Success delete user!"
+      delete_user_flash_fail: "Fail delete user!"
     edit:
       title: "Edit"
       notice_password: "(leave blank if you don't want to change it)"
@@ -53,5 +69,10 @@ en:
       btn_create: "Suggest"
       is_correct: "Correct option"
 
-
-
+  admin:
+    user:
+      stt: "Stt"
+      exam_name: "Exam name"
+      status: "Status"
+      start_at: "Start at"
+      view: "View"

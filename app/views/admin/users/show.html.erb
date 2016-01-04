@@ -1,0 +1,23 @@
+<% provide :title, t("users.title.user_detail") %>
+<div class="row">
+  <div class="col-md-12 col-md-offset-0">
+    <table class="table">
+      <thead>
+        <th><%= t "admin.user.stt" %></th>
+        <th><%= t "admin.user.exam_name" %></th>
+        <th><%= t "admin.user.status" %></th>
+        <th><%= t "admin.user.start_at" %></th>
+        <th><%= t "admin.user.view" %></th>
+      </thead>
+      <tbody>
+        <% @exams.each_with_index do |exam, index| %>
+          <td><%= index + 1 %></td>
+          <td><%= exam.subject.name %></td>
+          <td><%= exam.status %></td>
+          <td><%= exam.created_at.strftime("%Y/%m/%d") %></td>
+          <td><%= link_to t("users.table.view"), "#", class: "btn btn-primary" %></td>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

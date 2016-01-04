@@ -27,6 +27,9 @@ h2 {
 
 a {
   text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 p {
@@ -37,7 +40,7 @@ p {
   text-align: center;
  }
 #navigator {
-  background-color: #000000;
+  background-color: #F8F8F8;
   border-color: #e7e7e7;
 }
 
@@ -69,4 +72,9 @@ h2{
 }
 .pull-right{
   float: right;
+}
+.viewdetail {
+  a {
+    color: white;
+  }
 }
