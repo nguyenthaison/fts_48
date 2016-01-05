@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  enum role: [:normal, :admin]
+
   has_many :exams, dependent: :destroy
   has_many :questions, dependent: :destroy
 
