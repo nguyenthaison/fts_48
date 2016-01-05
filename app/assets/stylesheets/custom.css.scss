@@ -37,7 +37,7 @@ p {
   text-align: center;
  }
 #navigator {
-  background-color: #F8F8F8;
+  background-color: #000000;
   border-color: #e7e7e7;
 }
 
@@ -57,4 +57,16 @@ p {
     margin-top: -30px;
     color: #777;
   }
+}
+
+/*question*/
+h2{
+  font-size:30px;
+}
+#question .link-text-question{
+  font-size: 0.5em;
+  line-height: 3em;
+}
+.pull-right{
+  float: right;
 }

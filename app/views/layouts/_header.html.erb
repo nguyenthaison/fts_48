@@ -1,9 +1,38 @@
 <header class="navbar navbar-fixed-top navbar-inverse" id="navigator">
   <div class="container">
-    <%= link_to t("application.general.logo"), "#", id: "logo" %>
+    <%= link_to t("application.general.logo"), root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t("application.general.home"), root_path %></li>
+        <% if user_signed_in? %>
+          <% if current_user.admin? %>
+            <li><%= link_to t("application.general.home"), root_path %></li>
+          <% end %>
+          <% if current_user.normal? %>
+            <li><%= link_to t("application.general.home"), root_path %></li>
+            <li><%= link_to t("application.general.contributte"), "#" %></li>
+          <% end %>
+          <li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              acount <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <% if current_user.normal? %>
+                <li><%= link_to t("application.general.profile"), edit_user_registration_path %></li>
+              <% end %>
+              <% if current_user.admin? %>
+                <li><%= link_to t("application.general.profile"),  edit_user_registration_path %></li>
+              <% end %>
+              <li>
+                <%= link_to t("application.general.logout"), destroy_user_session_path, method: "delete" %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to t("application.general.home"), root_path %></li>
+          <li><%= link_to t("users.sign_up.title"), new_user_registration_path %></li>
+          <li><%= link_to t("users.sign_in.title"), new_user_session_path %></li>
+        <% end %>
       </ul>
     </nav>
   </div>
