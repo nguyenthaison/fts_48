@@ -9,7 +9,7 @@
           <% end %>
           <% if current_user.normal? %>
             <li><%= link_to t("application.general.home"), root_path %></li>
-            <li><%= link_to t("application.general.contributte"), "#" %></li>
+            <li><%= link_to t("application.general.contributte"), user_questions_path(current_user) %></li>
           <% end %>
           <li>
           <li class="dropdown">

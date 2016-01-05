@@ -45,6 +45,13 @@ en:
     confirmation:
       title: "Resend confirmation instructions"
       btn_resend: "Resend confirmation instructions"
+  questions:
+    index:
+      title: "Suggested Question"
+      new_q: "New question"
+    new:
+      btn_create: "Suggest"
+      is_correct: "Correct option"
 
 
 
