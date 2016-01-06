@@ -1,0 +1,20 @@
+<% provide :title, t("admin.subject.title.show") %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h2><%= t "admin.subject.subject_detail" %></h2>
+    <table class="table">
+      <tr>
+        <td><strong><%= t "admin.subject.table.name" %></strong></td>
+        <td><%= @subject.name %></td>
+      </tr>
+      <tr>
+        <td><strong><%= t "admin.subject.table.created_at" %></strong></td>
+        <td><%= @subject.created_at.strftime("%Y/%m/%d") %></td>
+      </tr>
+      <tr>
+        <td><strong><%= t "admin.subject.table.number_exams" %></strong></td>
+        <td><%= @subject.exams.size %></td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -9,6 +9,7 @@ en:
       confirm_delete: "Are you sure?"
       user: "Users"
       subject: "Subjects"
+      account: "Account"
   staticpages:
     home: "Welcome to the Fts Project Framgia"
     about:
@@ -82,16 +83,21 @@ en:
       title:
         index: "All subjects"
         new: "New subject"
+        show: "Show subject"
       new_subject: "New subject"
       edit_subject: "Edit subject"
+      subject_detail: "Subject detail"
       table:
         stt: "STT"
         subject_name: "Name"
         created_at: "Date created"
         edit: "Edit"
         delete: "Delete"
+        view: "View"
+        number_exams: "Number exams"
       edit: "Edit"
       delete: "Delete"
+      view: "View"
       new: "New subject"
       submit: "Submit"
       text_placeholder: "Enter Subject Name"
