@@ -1,0 +1,37 @@
+<% provide :title, t("admin.subject.title.index") %>
+<div class="row">
+  <div class="col-md-12">
+    <h2>
+      <b><%= t "admin.subject.title.index" %></b>
+      <%= link_to new_admin_subject_path, class: "btn btn-primary pull-right" do %>
+        <span class="glyphicon glyphicon-plus"></span>
+        <%= t "admin.subject.new_subject" %>
+      <% end %>
+    </h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="stt"><%= t "admin.subject.table.stt" %></th>
+          <th class="subject_name"><%= t "admin.subject.table.subject_name"%></th>
+          <th class="created_at"><%= t "admin.subject.table.created_at" %></th>
+          <th class="edit"><%= t "admin.subject.table.edit" %></th>
+          <th class="delete"><%= t "admin.subject.table.delete" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @subjects.each_with_index do|subject, index| %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= subject.name %></td>
+            <td><%= subject.created_at.strftime("%Y/%m/%d") %></td>
+            <td><%= link_to t("admin.subject.edit"), edit_admin_subject_path(subject),
+              class: "btn btn-primary" %></td>
+            <td><%= link_to t("delete"), [:admin, subject], method: :delete,
+              data: {confirm: t("application.general.confirm_delete")},
+              class: "btn btn-danger glyphicon glyphicon-trash btn-width" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -7,6 +7,8 @@ en:
       logo: "Framgia Test"
       footer: "This is footer"
       confirm_delete: "Are you sure?"
+      user: "Users"
+      subject: "Subjects"
   staticpages:
     home: "Welcome to the Fts Project Framgia"
     about:
@@ -76,3 +78,26 @@ en:
       status: "Status"
       start_at: "Start at"
       view: "View"
+    subject:
+      title:
+        index: "All subjects"
+        new: "New subject"
+      new_subject: "New subject"
+      edit_subject: "Edit subject"
+      table:
+        stt: "STT"
+        subject_name: "Name"
+        created_at: "Date created"
+        edit: "Edit"
+        delete: "Delete"
+      edit: "Edit"
+      delete: "Delete"
+      new: "New subject"
+      submit: "Submit"
+      text_placeholder: "Enter Subject Name"
+      new_subject_success: "Create subject successfuly!"
+      new_subject_fail: "Create subject fail!"
+      destroy_success: "Deleted subject complete!"
+      destroy_fail: "Delete fail!"
+      flash_update_success: "Update subject success!"
+      flash_update_fail: "Update subject fail!"
