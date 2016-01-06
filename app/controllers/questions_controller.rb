@@ -1,11 +1,16 @@
 class QuestionsController < ApplicationController
-  def index
+  load_and_authorize_resource
 
+  def show
+    @answers = @question.answers
+  end
+
+  def index
+    @questions = current_user.questions
   end
 
   def new
     @subjects = Subject.all
-    @question = Question.new
     @question.answers.build
   end
 
@@ -16,6 +21,30 @@ class QuestionsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @subjects = Subject.all
+    @question.answers.build
+  end
+
+  def update
+    if @question&.update_attributes(question_params)
+      flash[:success] = t ".success"
+      redirect_to user_questions_path current_user
+    else
+      flash[:danger] = t ".error"
+      render :edit
+    end
+  end
+
+  def destroy
+    if @question.destroy
+      flash[:success] = t ".success"
+    else
+      flash.now[:danger] = t ".error"
+    end
+    redirect_to user_questions
   end
 
   private

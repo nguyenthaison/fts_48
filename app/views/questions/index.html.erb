@@ -7,6 +7,41 @@
         <b><%= t ".title" %></b>
         <%= link_to t(".new_q"), new_user_question_path, class: "pull-right link-text-question" %>
       </h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="number_id"><%= t ".stt" %></th>
+            <th class="content"><%= t ".question" %></th>
+            <th class="subject"><%= t ".subject" %></th>
+            <th class="type"><%= t ".type" %></th>
+            <th class="state"><%= t ".state" %></th>
+            <th class="action"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @questions.each do |question| %>
+            <tr>
+              <td><%= question.id %></td>
+              <td>
+                <%= link_to question.content,
+                  user_question_path(current_user, question) %>
+              </td>
+              <td><%= question.subject.name %></td>
+              <td><%= question.question_type %></td>
+              <td class="label label-warning"><%= question.status %></td>
+              <td>
+                <%= link_to edit_user_question_path(current_user, question) do %>
+                  <i class="glyphicon glyphicon-edit"></i>
+                <% end %>
+                <%= link_to user_question_path(current_user, question),
+                  method: :delete, data: {confirm: "are you sure?"} do %>
+                  <i class="glyphicon glyphicon-trash"></i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

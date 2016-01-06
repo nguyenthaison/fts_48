@@ -68,10 +68,14 @@ en:
     index:
       title: "Suggested Question"
       new_q: "New question"
+      stt: "STT"
+      question: "Question"
+      subject: "Subject"
+      type: "Type"
+      state: "State"
     new:
       btn_create: "Suggest"
       is_correct: "Correct option"
-
   admin:
     user:
       stt: "Stt"
@@ -107,3 +111,14 @@ en:
       destroy_fail: "Delete fail!"
       flash_update_success: "Update subject success!"
       flash_update_fail: "Update subject fail!"
+    update:
+      success: "update success"
+      error: "update error"
+    destroy:
+      success: "question has been remove"
+      error: "delete question error"
+    show:
+      title: "Question"
+      content: "Content"
+      option: "Option"
+      question_type: "Question Type"
