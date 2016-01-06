@@ -6,4 +6,9 @@ Rails.application.routes.draw do
   resources :users do
     resources :questions
   end
+
+  namespace :admin do
+    root "users#index"
+    resources :users
+  end
 end
