@@ -127,6 +127,7 @@ en:
       title:
         index: "All questions"
         show: "Show question"
+        new: "New question"
       table:
         stt: "STT"
         question: "Question"
@@ -135,9 +136,14 @@ en:
         state: "State"
         view: "View"
         delete: "Delete"
+      pending: "Pending"
+      actived: "Actived"
       content: "Content"
       correct: "Correct"
       wrong: "Wrong"
+      new_question: "New question"
+      flash_create_question_success: "Create question successfuly!"
+      flash_create_question_fail: "Create question fail!"
       flash_destroy_question_success: "Destroy question successfuly!"
       flash_destroy_question_fail: "Destroy question fail!"
     subject:

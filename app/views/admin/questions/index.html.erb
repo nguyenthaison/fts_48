@@ -1,7 +1,12 @@
 <% provide :title, t("admin.question.title.index") %>
 <div class="row">
   <div class="col-md-12">
-    <h2><%= t "admin.question.title.index" %></h2>
+    <h2><%= t "admin.question.title.index" %>
+      <%= link_to new_admin_question_path, class: "btn btn-primary pull-right" do %>
+        <span class="glyphicon glyphicon-plus"></span>
+        <%= t "admin.question.new_question" %>
+      <% end %>
+    </h2>
     <table class="table">
       <thead>
         <tr>
@@ -22,7 +27,7 @@
             <td><%= question.subject.name %></td>
             <td><span class="label label-info"><%= question.question_type %>
               </span></td>
-            <td><span class="label label-success"><%= question.question_type %>
+            <td><span class="label label-info"><%= question.status %>
               </span></td>
             <td><%= link_to t("admin.question.table.view"), admin_question_path(question),
               class: "btn btn-primary" %></td>

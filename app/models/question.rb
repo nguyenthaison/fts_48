@@ -13,5 +13,11 @@ class Question < ActiveRecord::Base
 
   validates :content, presence: true
   validates :answers, presence: true
+  before_create :init_status
+
+  private
+  def init_status
+    self.status = :waitting if status.nil?
+  end
 
 end
