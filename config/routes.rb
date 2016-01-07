@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root "users#index"
+    resources :exams, only: [:show, :index, :destroy]
     resources :users
     resources :subjects
   end

@@ -2,11 +2,11 @@ class Admin::UsersController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @users = @users.normal.page params[:page]
+    @users = @users.normal.page(params[:page]).per 10
   end
 
   def show
-    @exams = current_user.exams.page params[:page]
+    @exams = current_user.exams.page(params[:page]).per 10
   end
 
   def destroy

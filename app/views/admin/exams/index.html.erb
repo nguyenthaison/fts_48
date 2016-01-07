@@ -1,0 +1,33 @@
+<% provide :title, t("admin.exam.title.index") %>
+<div class="row">
+  <div class="col-md-12 col-md-2-offset">
+    <h2><%= t "admin.exam.title.index" %></h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th><%= t"admin.exam.table.stt" %></th>
+          <th><%= t"admin.exam.table.username" %></th>
+          <th><%= t"admin.exam.table.subject_name" %></th>
+          <th><%= t"admin.exam.table.state" %></th>
+          <th><%= t"admin.exam.table.view" %></th>
+          <th><%= t"admin.exam.table.delete" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @exams.each_with_index do|exam, index| %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= link_to exam.user.name, admin_user_path(exam.user) %></td>
+            <td><%= exam.subject.name %></td>
+            <td><span class="label label-primary"><%= exam.status %></span></td>
+            <td><%= link_to t("admin.exam.table.view"), admin_exam_path(exam), class: "btn btn-primary" %></td>
+            <td><%= link_to t("delete"), [:admin, exam], method: :delete,
+              data: {confirm: t("application.general.confirm_delete")},
+              class: "btn btn-danger glyphicon glyphicon-trash btn-width" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= paginate @exams %>
+  </div>
+</div>
