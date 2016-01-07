@@ -77,6 +77,24 @@ en:
     new:
       btn_create: "Suggest"
       is_correct: "Correct option"
+    show:
+      btn_edit: "Edit"
+      btn_del: "Delete"
+  exams:
+    index:
+      title: "Examination List"
+      btn_create: "Create Exam"
+      start: "Start"
+      created_at: "Create Date"
+      subject: "Subject"
+      status: "Status"
+      duration: "Duration"
+      numb_q: "Question Number"
+      spent_time: "Spent Time"
+      score: "Score"
+    create:
+      success: "Exam has been create!"
+      error: "Create exam error"
   admin:
     user:
       stt: "Stt"

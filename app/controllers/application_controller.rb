@@ -16,9 +16,9 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for resource
     if current_user.normal?
-      user_questions_path current_user
+      exams_path current_user
     else
-      root_path
+      admin_root_path
     end
   end
 end

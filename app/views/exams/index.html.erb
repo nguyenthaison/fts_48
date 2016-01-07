@@ -1,0 +1,53 @@
+<div class="content container">
+  <div class="col-md-10 col-md-offset-1 width-flash">
+  </div>
+
+  <div class="row exam">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="form-exam">
+        <%= form_for @exam do  |f|%>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.hidden_field :status, value: :start %>
+          <%= f.hidden_field :duration, value: Settings.exam.duration %>
+          <%= f.hidden_field :number_of_question,
+            value: Settings.exam.number_of_question %>
+          <%= f.select :subject_id,
+            options_from_collection_for_select(@subjects, "id", "name"),
+            class: "form-control button" %>
+          <%= f.submit t(".btn_create"), class: "btn btn-primary" %>
+        <% end %>
+      </div>
+      <h3><%= t ".title" %></h3>
+      <table class="table table-exam">
+        <thead>
+          <tr>
+            <th><%= t ".created_at" %></th>
+            <th><%= t ".subject" %></th>
+            <th><% t ".status" %></th>
+            <th><%= t ".duration" %></th>
+            <th><%= t ".numb_q" %></th>
+            <th><%= t ".spent_time" %></th>
+            <th><%= t ".score" %></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @exams.each do |exam| %>
+            <tr>
+              <td><%= exam.created_at %></td>
+              <td><%= exam.subject.name %></td>
+              <td><span class="label label-primary"><%= exam.status %></span></td>
+              <td><%= exam.duration %></td>
+              <td><%= exam.number_of_question %></td>
+              <td></td>
+              <td></td>
+              <td>
+                <%= link_to t(".start"), "#", class: "btn btn-primary width-label" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
