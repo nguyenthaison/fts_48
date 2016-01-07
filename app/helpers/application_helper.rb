@@ -26,4 +26,12 @@ module ApplicationHelper
     link_to name, "#", onclick: "return add_fields(this, \"#{association}\",
       \"#{escape_javascript(fields)}\")", class: "btn btn-info btn-block"
   end
+
+  def count_correct_question questions
+    @array = questions.select{ |question|
+      question.results.any? && (question.results - question.answers).empty?
+    }
+    return @array.size
+  end
+
 end

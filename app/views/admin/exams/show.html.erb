@@ -1,0 +1,29 @@
+<% provide :title, t("admin.exam.title.show") %>
+<div class="row">
+  <div class="col-md-6 col-md-2-offset">
+    <h2><%= t "admin.exam.exam_detail" %></h2>
+    <table class="table">
+      <tr>
+        <td><strong><%= t "admin.exam.table.subject_name" %></strong></td>
+        <td><%= @exam.subject.name %></td>
+      </tr>
+      <tr>
+        <td><strong><%= t "admin.exam.table.duration" %></strong></td>
+        <td><%= @exam.duration %><span><%= t "admin.exam.table.minute" %></span></td>
+      </tr>
+      <tr>
+        <td><strong><%= t "admin.exam.table.number_question" %></strong></td>
+        <td><%= @exam.number_of_question %></td>
+      </tr>
+      <tr>
+        <td><strong><%= t "admin.exam.table.state" %></strong></td>
+        <td><%= @exam.status %></td>
+      </tr>
+      <tr>
+        <td><strong><%= t "admin.exam.table.number_correct_question" %></strong></td>
+        <td><%= count_correct_question @exam.subject.questions %>
+          <span>&#47</span><%= @exam.number_of_question%></td>
+      </tr>
+    </table>
+  </div>
+</div>

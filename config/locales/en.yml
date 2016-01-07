@@ -10,6 +10,7 @@ en:
       user: "Users"
       subject: "Subjects"
       account: "Account"
+      exam: "Exams"
   staticpages:
     home: "Welcome to the Fts Project Framgia"
     about:
@@ -83,6 +84,26 @@ en:
       status: "Status"
       start_at: "Start at"
       view: "View"
+    exam:
+      title:
+        index: "All exams"
+        show: "Show exam"
+      table:
+        stt: "STT"
+        username: "Username"
+        user_email: "User email"
+        subject_name: "Subject name"
+        state: "State"
+        view: "View"
+        delete: "Delete"
+        duration: "Duration"
+        minute: "minutes"
+        number_question: "Number questions"
+        state: "State"
+        number_correct_question: "Number correct of questions"
+      exam_detail: "Exam detail"
+      flash_destroy_exam_success: "Delete exam successfuly!"
+      flash_destroy_exam_fail: "delete_exam_flash_fail!"
     subject:
       title:
         index: "All subjects"
