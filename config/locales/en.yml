@@ -11,6 +11,7 @@ en:
       subject: "Subjects"
       account: "Account"
       exam: "Exams"
+      question: "Questions"
   staticpages:
     home: "Welcome to the Fts Project Framgia"
     about:
@@ -122,6 +123,23 @@ en:
       exam_detail: "Exam detail"
       flash_destroy_exam_success: "Delete exam successfuly!"
       flash_destroy_exam_fail: "delete_exam_flash_fail!"
+    question:
+      title:
+        index: "All questions"
+        show: "Show question"
+      table:
+        stt: "STT"
+        question: "Question"
+        subject: "Subject"
+        type: "Type"
+        state: "State"
+        view: "View"
+        delete: "Delete"
+      content: "Content"
+      correct: "Correct"
+      wrong: "Wrong"
+      flash_destroy_question_success: "Destroy question successfuly!"
+      flash_destroy_question_fail: "Destroy question fail!"
     subject:
       title:
         index: "All subjects"
@@ -161,3 +179,4 @@ en:
       content: "Content"
       option: "Option"
       question_type: "Question Type"
+
