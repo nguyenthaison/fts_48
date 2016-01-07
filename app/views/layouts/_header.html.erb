@@ -8,6 +8,7 @@
             <li><%= link_to t("application.general.home"), root_path %></li>
             <li><%= link_to t("application.general.exam"), admin_exams_path %></li>
             <li><%= link_to t("application.general.user"), admin_users_path %></li>
+            <li><%= link_to t("application.general.question"), admin_questions_path %></li>
             <li><%= link_to t("application.general.subject"), admin_subjects_path %></li>
           <% end %>
           <% if current_user.normal? %>
