@@ -73,6 +73,7 @@ h2{
 .pull-right{
   float: right;
 }
+
 .viewdetail {
   a {
     color: white;
@@ -81,4 +82,14 @@ h2{
 
 .new_subject {
   margin-top: 5px;
+}
+
+.label{
+  width: 5px;
+  height: 3px;
+}
+
+.title{
+  width: 30px;
+  font-weight: bold;
 }

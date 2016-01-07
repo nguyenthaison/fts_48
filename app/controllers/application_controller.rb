@@ -13,4 +13,12 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) << [:name, :chatwork_id, :email,
       :password, :password_confirmation, :current_password]
   end
+
+  def after_sign_in_path_for resource
+    if current_user.normal?
+      user_questions_path current_user
+    else
+      root_path
+    end
+  end
 end
