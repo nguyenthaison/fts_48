@@ -1,6 +1,6 @@
 <h2><b><%= t ".title" %></b></h2>
 <div class="row col-md-offset-3">
-  <table class="table">
+  <table class="table borderless">
     <tbody>
       <tr>
         <td class="title"><%= t ".content" %></td>
@@ -42,11 +42,11 @@
       <tr>
         <td>
           <%= link_to edit_user_question_path(current_user, @question) do %>
-            <i class="btn btn-primary glyphicon glyphicon-pencil btn-width"></i>
+            <i class="btn btn-primary glyphicon glyphicon-pencil btn-width"><%= t ".btn_edit" %></i>
           <% end %>
           <%= link_to user_question_path(current_user, @question),
             method: :delete, data: {confirm: "are you sure?"} do %>
-            <i class="btn btn-danger glyphicon glyphicon-trash btn-width"></i>
+            <i class="btn btn-danger glyphicon glyphicon-trash btn-width"><%= t ".btn_del" %></i>
           <% end %>
         </td>
       </tr>

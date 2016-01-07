@@ -13,4 +13,5 @@ class Question < ActiveRecord::Base
 
   validates :content, presence: true
   validates :answers, presence: true
+
 end

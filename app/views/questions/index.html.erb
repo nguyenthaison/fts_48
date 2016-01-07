@@ -28,7 +28,7 @@
               </td>
               <td><%= question.subject.name %></td>
               <td><%= question.question_type %></td>
-              <td class="label label-warning"><%= question.status %></td>
+              <td><span class="label label-warning"><%= question.status %></span></td>
               <td>
                 <%= link_to edit_user_question_path(current_user, question) do %>
                   <i class="glyphicon glyphicon-edit"></i>
