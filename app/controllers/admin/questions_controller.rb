@@ -2,7 +2,7 @@ class Admin::QuestionsController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @questions = @questions.page(params[:page]).per 15
+    @questions = @questions.latest.page(params[:page]).per 15
   end
 
   def show
@@ -24,13 +24,28 @@ class Admin::QuestionsController < ApplicationController
     end
   end
 
+  def edit
+    @subjects = Subject.all
+    @question.answers.build
+  end
+
+  def update
+    if @question && @question.update_attributes(question_params)
+      flash[:success] = t "admin.question.flash_update_question_success"
+      redirect_to admin_questions_path current_user
+    else
+      flash[:danger] = t "admin.question.flash_update_question_fail"
+      render :edit
+    end
+  end
+
   def destroy
     if @question.destroy
       flash[:success] = t "admin.question.flash_destroy_question_success"
     else
       flash[:danger] = t "admin.question.flash_destroy_question_fail"
     end
-    redirect_to :back
+    redirect_to admin_questions_path
   end
 
   private

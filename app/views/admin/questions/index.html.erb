@@ -16,6 +16,7 @@
           <th><%= t "admin.question.table.type" %></th>
           <th><%= t "admin.question.table.state" %></th>
           <th><%= t "admin.question.table.view" %></th>
+          <th><%= t "admin.question.table.edit" %></th>
           <th><%= t "admin.question.table.delete" %></th>
         </tr>
       </thead>
@@ -27,9 +28,19 @@
             <td><%= question.subject.name %></td>
             <td><span class="label label-info"><%= question.question_type %>
               </span></td>
-            <td><span class="label label-info"><%= question.status %>
-              </span></td>
+            <td>
+              <% if question.waitting? %>
+                <%= form_for [:admin, question] do |f| %>
+                  <%= f.hidden_field :status, value: :accept %>
+                  <%= f.submit t("admin.question.pending"), class: "btn btn-danger" %>
+                <% end %>
+              <% else %>
+                <button class="btn btn-success disabled"><%= t "admin.question.active" %></button>
+              <% end %>
+            </td>
             <td><%= link_to t("admin.question.table.view"), admin_question_path(question),
+              class: "btn btn-primary" %></td>
+            <td><%= link_to t("admin.question.table.edit"), edit_admin_question_path(question),
               class: "btn btn-primary" %></td>
             <td><%= link_to t("delete"), [:admin, question], method: :delete,
               data: {confirm: t("application.general.confirm_delete")},

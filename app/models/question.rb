@@ -7,6 +7,7 @@ class Question < ActiveRecord::Base
   has_many :answers, dependent: :destroy
   has_many :results, dependent: :destroy
   has_many :exams, through: :results
+  scope :latest, ->{order created_at: :desc}
 
   accepts_nested_attributes_for :answers, allow_destroy: true,
     reject_if: proc {|answer| answer[:content].blank?}
