@@ -1,0 +1,38 @@
+<div class="content container">
+  <div class="col-md-10 col-md-offset-1 width-flash"></div>
+  <div class="row exam">
+    <div class="col-md-8 col-md-offset-1">
+      <div class="title">
+        <center>
+          <b>
+            <h2><%= @exam.subject.name %></h2>
+          </b>
+        </center>
+      </div>
+      <div class="edit-exam">
+        <%= form_for @exam do |f| %>
+          <ol>
+            <%= f.fields_for :results do |result| %>
+              <%= render "question", :f => result %>
+            <% end %>
+          </ol>
+          <div class="row">
+            <div class="col-md-2 col-md-offset-5">
+              <%= f.submit "save", class: "btn btn-info" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-2 col-md-offset-1 timer">
+      <h4><%= t ".time" %></h4>
+      <div id="clock" class="is-countdown">
+        <h3>
+          <span class="countdown-row countdown-show3" id="cdtime" data-duration="<%= @exam.duration %>"
+            data-msgout="time-out">
+          </span>
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>

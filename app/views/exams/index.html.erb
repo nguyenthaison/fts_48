@@ -40,9 +40,10 @@
               <td><%= exam.duration %></td>
               <td><%= exam.number_of_question %></td>
               <td></td>
-              <td></td>
+              <td><%= count_correct_question exam.subject.questions %>
+                <span>&#47</span><%= exam.number_of_question%></td>
               <td>
-                <%= link_to t(".start"), "#", class: "btn btn-primary width-label" %>
+                <%= link_to t(".start"), exam, class: "btn btn-primary width-label" %>
               </td>
             </tr>
           <% end %>

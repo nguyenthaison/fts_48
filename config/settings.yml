@@ -1,3 +1,8 @@
 exam:
   duration: 30
-  number_of_question: 2
+  number_of_question: 30
+questions:
+  type:
+    single: single
+    multiple: multiple
+    text: text
