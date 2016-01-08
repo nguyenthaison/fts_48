@@ -96,6 +96,8 @@ en:
     create:
       success: "Exam has been create!"
       error: "Create exam error"
+    show:
+      time: "Time remain: "
   admin:
     user:
       stt: "Stt"
