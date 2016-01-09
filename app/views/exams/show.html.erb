@@ -2,7 +2,7 @@
   <div class="col-md-10 col-md-offset-1 width-flash"></div>
   <div class="row exam">
     <div class="col-md-8 col-md-offset-1">
-      <div class="title">
+      <div class="title col-md-offset-5">
         <center>
           <b>
             <h2><%= @exam.subject.name %></h2>
@@ -17,22 +17,28 @@
             <% end %>
           </ol>
           <div class="row">
-            <div class="col-md-2 col-md-offset-5">
-              <%= f.submit "save", class: "btn btn-info" %>
+            <div class="action">
+              <% if @exam.testing? %>
+                <%= f.submit t(".btn_save"), class: "btn btn-primary btn_save" %>
+                <%= f.submit t(".btn_finish"), class: "btn btn-danger btn_finish" %>
+              <% end %>
             </div>
           </div>
         <% end %>
       </div>
     </div>
-    <div class="col-md-2 col-md-offset-1 timer">
-      <h4><%= t ".time" %></h4>
-      <div id="clock" class="is-countdown">
-        <h3>
-          <span class="countdown-row countdown-show3" id="cdtime" data-duration="<%= @exam.duration %>"
-            data-msgout="time-out">
-          </span>
-        </h3>
+    <% if @exam.start? ||  @exam.testing? %>
+      <div class="col-md-2 col-md-offset-1 timer">
+        <h4><%= t ".time" %></h4>
+        <div id="clock" class="is-countdown">
+          <h3>
+            <span class="countdown-row countdown-show3" id="cdtime"
+              data-duration="<%= @exam.duration %>"
+              data-msgout="time-out">
+            </span>
+          </h3>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>

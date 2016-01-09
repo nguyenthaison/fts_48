@@ -79,6 +79,7 @@ en:
       btn_create: "Suggest"
       is_correct: "Correct option"
     show:
+      title: "Question"
       btn_edit: "Edit"
       btn_del: "Delete"
   exams:
@@ -93,11 +94,17 @@ en:
       numb_q: "Question Number"
       spent_time: "Spent Time"
       score: "Score"
+      view: "View"
     create:
       success: "Exam has been create!"
       error: "Create exam error"
     show:
       time: "Time remain: "
+      btn_save: "Save"
+      btn_finish: "Finish"
+    update:
+      success: "Success"
+      error: "error"
   admin:
     user:
       stt: "Stt"
@@ -106,6 +113,8 @@ en:
       start_at: "Start at"
       view: "View"
     exam:
+      index:
+        btn_uncheck: "unchecked"
       title:
         index: "All exams"
         show: "Show exam"

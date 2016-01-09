@@ -21,7 +21,7 @@
       </tr>
       <tr>
         <td><strong><%= t "admin.exam.table.number_correct_question" %></strong></td>
-        <td><%= count_correct_question @exam.subject.questions %>
+        <td><%= @exam.results.correct_answer.size %>
           <span>&#47</span><%= @exam.number_of_question%></td>
       </tr>
     </table>
