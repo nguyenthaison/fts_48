@@ -13,6 +13,7 @@ gem "sdoc", "~> 0.4.0", group: :doc
 gem "cancancan"
 gem "kaminari"
 gem "config"
+gem "sidekiq"
 
 group :development, :test do
   gem "byebug"

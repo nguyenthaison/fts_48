@@ -200,4 +200,9 @@ en:
       content: "Content"
       option: "Option"
       question_type: "Question Type"
-
+  mailer:
+    subject_title: "Thank for your test in framgia"
+  hi: "Hi "
+  thanks_for_test: "Thanks for your test in Framgia"
+  your_score: "Your score is "
+  have_niceday: "Have a nice day!"
