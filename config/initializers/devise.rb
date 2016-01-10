@@ -249,6 +249,21 @@ Devise.setup do |config|
   #   manager.default_strategies(scope: :user).unshift :some_external_strategy
   # end
 
+  config.warden do |manager|
+    Warden::Manager.before_logout do |user,auth,opts|
+      ability = Ability.new user
+      if ability.can? :manage, :all
+        Activity.add_activity Activity.actions[:logout], user.id
+      end
+    end
+    Warden::Manager.after_authentication do |user,auth,opts|
+      ability = Ability.new user
+      if ability.can? :manage, :all
+        Activity.add_activity Activity.actions[:login], user.id
+      end
+    end
+  end
+
   # ==> Mountable engine configurations
   # When using Devise inside an engine, let's call it `MyEngine`, and this engine
   # is mountable, there are some extra configurations to be taken into account.

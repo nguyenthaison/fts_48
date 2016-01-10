@@ -25,6 +25,7 @@
                 <li><%= link_to t("application.general.profile"), edit_user_registration_path %></li>
               <% end %>
               <% if current_user.admin? %>
+                <li><%= link_to t("application.general.activity_log"),  admin_activities_path %></li>
                 <li><%= link_to t("application.general.profile"),  edit_user_registration_path %></li>
               <% end %>
               <li>
