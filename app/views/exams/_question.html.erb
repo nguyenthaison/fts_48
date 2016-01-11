@@ -7,18 +7,19 @@
     <% case f.object.question.question_type %>
     <% when Settings.questions.type.single %>
       <% f.object.question.answers.each do |answer| %>
-        <%= f.radio_button :content_answer, answer.id,
-          {checked: f.object.content, multiple: true, class: "radio_answer"} %>
+        <%= f.radio_button :answer_id, answer.id,
+          {disabled: !f.object.exam.testing?, class: "radio_answer"} %>
         <%= answer.content %><br/>
     <% end %>
     <% when Settings.questions.type.multiple %>
       <% f.object.question.answers.each do |answer| %>
-        <%= f.check_box :content_answer,
+        <%= f.check_box :answer_id, answer.id,
           {multiple: true, class: "radio_answer"}, answer.id, false %>
         <%= answer.content %><br/>
     <% end %>
     <% when Settings.questions.type.text %>
-      <%= f.text_field :content_answer, multiple: true %>
+      <%= f.text_field :content, multiple: true %>
     <% end %>
   </ol>
 </div>
+

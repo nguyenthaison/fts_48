@@ -130,3 +130,32 @@ thead{
   top: 70px;
   width: 150px;
 }
+
+.btn_save{
+  float:left;
+}
+
+.btn_finish{
+  float:right;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+  .navbar-inverse .navbar-nav > li > a:focus{
+    color: #0F0F0F;
+    background-color: transparent
+  }
+
+.navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: #F8F8F8;
+    color: #000000;
+}
+
+.navbar-inverse .navbar-nav > .open > a:visited{
+  background-color: #F8F8F8;
+  color: #000000;
+}
+
+#exam_subject_id{
+  padding: 7px;
+  border-radius: 4px;
+}

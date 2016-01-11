@@ -11,10 +11,16 @@ class Exam < ActiveRecord::Base
   before_create :init_exam
 
   def change_status_after_start
-    if self.start?
+    if self.start? || self.testing?
       self.status = :testing
+      self.started_at = Time.zone.now.to_i
+      self.calculate_time
       self.save
     end
+  end
+
+  def calculate_time
+    self.spent_time = Time.zone.now.to_i - self.started_at
   end
 
   private

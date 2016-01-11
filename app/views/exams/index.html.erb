@@ -35,15 +35,37 @@
           <% @exams.each do |exam| %>
             <tr>
               <td><%= exam.created_at %></td>
+
               <td><%= exam.subject.name %></td>
-              <td><span class="label label-primary"><%= exam.status %></span></td>
+              <% if exam.start? %>
+                <td><span class="label label-primary"><%= exam.status %></span></td>
+              <% elsif exam.unchecked? %>
+                <td><span class="label label-info"><%= exam.status %></span></td>
+              <% elsif exam.testing? %>
+                <td><span class="label label-warning"><%= exam.status %></span></td>
+              <% else exam.checked? %>
+                <td><span class="label label-success"><%= exam.status %></span></td>
+              <% end %>
+
               <td><%= exam.duration %></td>
               <td><%= exam.number_of_question %></td>
-              <td></td>
-              <td><%= count_correct_question exam.subject.questions %>
-                <span>&#47</span><%= exam.number_of_question%></td>
+
+              <% if exam.checked? || exam.unchecked? %>
+                <td><%= convert_duration(exam.spent_time) %></td>
+              <% else %>
+                <td><span>--:--:--</span></td>
+              <% end %>
+
+              <% if exam.checked? %>
+                <td><%= exam.results.correct_answer.size %>
+                  <span>&#47</span><%= exam.number_of_question%>
+                </td>
+              <% else %>
+                <td><span>--:--</span></td>
+              <% end %>
               <td>
-                <%= link_to t(".start"), exam, class: "btn btn-primary width-label" %>
+                <%= link_to exam.start? ?  t(".start") : t(".view"),
+                  exam, class: "btn btn-primary width-label" %>
               </td>
             </tr>
           <% end %>

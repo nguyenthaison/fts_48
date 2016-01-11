@@ -27,11 +27,12 @@ module ApplicationHelper
       \"#{escape_javascript(fields)}\")", class: "btn btn-info btn-block"
   end
 
-  def count_correct_question questions
-    @array = questions.select{ |question|
-      question.results.any? && (question.results - question.answers).empty?
-    }
-    return @array.size
+  def convert_duration duration
+    if !duration.nil?
+      Time.at(duration).utc.strftime("%H:%M:%S")
+    else
+      duration = 0
+      Time.at(duration).utc.strftime("%H:%M:%S")
+    end
   end
-
 end
