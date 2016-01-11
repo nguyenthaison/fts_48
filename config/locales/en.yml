@@ -14,6 +14,7 @@ en:
       question: "Questions"
   staticpages:
     home: "Welcome to the Fts Project Framgia"
+    at: "at"
     about:
       content: "About us"
   hello: "Hello world"

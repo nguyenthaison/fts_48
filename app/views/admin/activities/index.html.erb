@@ -1,0 +1,12 @@
+<div class="col-md-12" id="activity">
+  <center>
+    <h3>Activity Log</h3>
+    <% @activitys.each do |activity| %>
+      <b><%= activity.user.name %></b>
+      <%= activity.action %> <%= t "staticpages.at" %>
+      <%= activity.created_at.strftime("%H:%M %d/%m/%Y") %>
+      <br></br>
+    <% end %>
+    <%= paginate @activitys %>
+  </center>
+</div>
