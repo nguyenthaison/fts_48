@@ -206,3 +206,7 @@ en:
   thanks_for_test: "Thanks for your test in Framgia"
   your_score: "Your score is "
   have_niceday: "Have a nice day!"
+  subject_mailer:
+    title: "Check new category"
+    hi: "Hi "
+    content: "We have created a new category, let join and try it!"
