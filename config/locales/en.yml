@@ -211,3 +211,7 @@ en:
     title: "Check new category"
     hi: "Hi "
     content: "We have created a new category, let join and try it!"
+  exam_mailer:
+    title: "Exam delay after 8 hours"
+    hi: "Hi "
+    content: "Exam has created, you could start it after 8 hours"
