@@ -33,7 +33,7 @@ class ExamsController < ApplicationController
 
   private
   def exam_params
-    params.require(:exam).permit :duration, :number_of_question,
-      :status, :user_id, :subject_id, results_attributes: [:id, :answer_id, :content]
+    params.require(:exam).permit :duration, :number_of_question, :status,
+    :user_id, :subject_id, :spent_time, results_attributes: [:id, :answer_id, :content]
   end
 end

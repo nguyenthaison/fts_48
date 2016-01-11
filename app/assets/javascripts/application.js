@@ -43,7 +43,7 @@ function cowntdown(){
   hours = "00";
   if(now >= end){
     clearTimeout(timerID);
-    alert($("#cdtime").data("msgout"));
+    document.getElementById("finish").click();
   }
   else{
     document.getElementById("cdtime").innerHTML = hours + ":" + min + ":" + sec;
@@ -52,7 +52,7 @@ function cowntdown(){
 }
 var ready = function() {
   var minutesleft = 0;
-  var secondsleft =  parseInt($("#cdtime").data("duration")*60);
+  var secondsleft =  parseInt($("#cdtime").data("duration"));
   end = new Date();
   end.setMinutes(end.getMinutes()+minutesleft);
   end.setSeconds(end.getSeconds()+secondsleft);

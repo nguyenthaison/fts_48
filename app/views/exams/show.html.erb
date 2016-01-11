@@ -20,7 +20,7 @@
             <div class="action">
               <% if @exam.testing? %>
                 <%= f.submit t(".btn_save"), class: "btn btn-primary btn_save" %>
-                <%= f.submit t(".btn_finish"), class: "btn btn-danger btn_finish" %>
+                <%= f.submit t(".btn_finish"), class: "btn btn-danger btn_finish", id: "finish" %>
               <% end %>
             </div>
           </div>
@@ -33,7 +33,7 @@
         <div id="clock" class="is-countdown">
           <h3>
             <span class="countdown-row countdown-show3" id="cdtime"
-              data-duration="<%= @exam.duration %>"
+              data-duration="<%= @exam.time_remain %>"
               data-msgout="time-out">
             </span>
           </h3>
@@ -42,3 +42,4 @@
     <% end %>
   </div>
 </div>
+
