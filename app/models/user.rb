@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   enum role: [:normal, :admin]
 
   has_many :exams, dependent: :destroy
