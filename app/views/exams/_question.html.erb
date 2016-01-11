@@ -22,4 +22,11 @@
     <% end %>
   </ol>
 </div>
+<% if f.object.exam.checked? %>
+  <% if f.object.answer.nil? || f.object.answer.is_correct != 1%>
+    <span class="label label-danger">wrong</span>
+  <% else %>
+    <span class="label label-primary">Correct</span>
+  <% end %>
+<% end %>
 

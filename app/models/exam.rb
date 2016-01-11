@@ -12,7 +12,7 @@ class Exam < ActiveRecord::Base
   after_create :send_exam_message
 
   def change_status_after_start
-    if self.start? || self.testing?
+    if self.start?
       self.status = :testing
       self.started_at = Time.zone.now.to_i
       self.calculate_time
@@ -24,8 +24,13 @@ class Exam < ActiveRecord::Base
     self.spent_time = Time.zone.now.to_i - self.started_at
   end
 
+  def time_remain
+    self.duration*60 - self.spent_time
+  end
+
   private
   def init_exam
+    self.spent_time = 0
     @questions = self.subject.questions.accept.order("RANDOM()").
       limit(Settings.exam.number_of_question)
     @questions.each do |question|
@@ -36,5 +41,4 @@ class Exam < ActiveRecord::Base
   def send_exam_message
     HardWorker.perform_async self.id
   end
-
 end
