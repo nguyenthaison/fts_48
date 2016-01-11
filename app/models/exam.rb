@@ -9,6 +9,7 @@ class Exam < ActiveRecord::Base
   accepts_nested_attributes_for :results
 
   before_create :init_exam
+  after_create :send_exam_message
 
   def change_status_after_start
     if self.start? || self.testing?
@@ -30,6 +31,10 @@ class Exam < ActiveRecord::Base
     @questions.each do |question|
       self.results.build question_id: question.id
     end
+  end
+
+  def send_exam_message
+    HardWorker.perform_async self.id
   end
 
 end
