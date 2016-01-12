@@ -35,4 +35,5 @@ module ApplicationHelper
       Time.at(duration).utc.strftime("%H:%M:%S")
     end
   end
+
 end

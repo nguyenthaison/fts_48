@@ -1,4 +1,5 @@
 <div class="panel panel-info fields">
+  <%= render "shared/errors", object: f.object %>
   <div class="panel-body">
     <%= f.text_field :content, class: "form-control word_content" %>
     <%= f.check_box :is_correct, class: "radio_answer" %>
