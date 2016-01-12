@@ -17,4 +17,10 @@ class UserNotifier < ApplicationMailer
     mail to: @user.email, subject: t("exam_mailer.title")
   end
 
+  def send_email_every_month exam
+    @exam = exam
+    @user = exam.user
+    mail to: @user.email, subject: t("static_exam.content")
+  end
+
 end
