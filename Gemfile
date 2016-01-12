@@ -18,6 +18,7 @@ gem "delayed_job_active_record"
 gem "friendly_id"
 gem "omniauth"
 gem "omniauth-facebook"
+gem "whenever", require: false
 
 group :development, :test do
   gem "byebug"

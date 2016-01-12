@@ -50,6 +50,12 @@ class Exam < ActiveRecord::Base
   end
   handle_asynchronously :delay_exam_create, run_at: Proc.new { 8.hours.from_now }
 
+  def send_statistic_exam_email
+    @exam.all do |exam|
+      UserNotifier.send_email_every_month(exam).deliver_now
+    end
+  end
+
   private
   def init_exam
     self.spent_time = 0
