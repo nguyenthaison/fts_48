@@ -3,7 +3,7 @@ class ExamsController < ApplicationController
 
   def index
     @exam = Exam.new
-    @subjects = Subject.all
+    @subjects = Subject.all.select {|item| item.questions.any? }
     @exams = current_user.exams
   end
 

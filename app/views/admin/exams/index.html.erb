@@ -14,27 +14,29 @@
         </tr>
       </thead>
       <tbody>
-        <% @exams.each_with_index do|exam, index| %>
-          <tr>
-            <td><%= index + 1 %></td>
-            <td><%= link_to exam.user.name, admin_user_path(exam.user) %></td>
-            <td><%= exam.subject.name %></td>
-            <td>
-              <% if exam.unchecked? %>
-                <%= form_for [:admin, exam] do |f| %>
-                  <%= f.hidden_field :status, value: :checked %>
-                  <%= f.submit t("admin.exam.index.btn_uncheck"), class: "btn btn-danger" %>
+        <% if @exams.any? %>
+          <% @exams.each_with_index do|exam, index| %>
+            <tr>
+              <td><%= index + 1 %></td>
+              <td><%= link_to exam.user.name, admin_user_path(exam.user) %></td>
+              <td><%= exam.subject.name %></td>
+              <td>
+                <% if exam.unchecked? %>
+                  <%= form_for [:admin, exam] do |f| %>
+                    <%= f.hidden_field :status, value: :checked %>
+                    <%= f.submit t("admin.exam.index.btn_uncheck"), class: "btn btn-danger" %>
+                  <% end %>
+                <% else %>
+                  <span class="label label-primary"><%= exam.status %></span>
                 <% end %>
-              <% else %>
-                <span class="label label-primary"><%= exam.status %></span>
-              <% end %>
-            </td>
-            <td><%= link_to t("admin.exam.table.view"),
-              admin_exam_path(exam), class: "btn btn-primary" %></td>
-            <td><%= link_to t("delete"), [:admin, exam], method: :delete,
-              data: {confirm: t("application.general.confirm_delete")},
-              class: "btn btn-danger glyphicon glyphicon-trash btn-width" %></td>
-          </tr>
+              </td>
+              <td><%= link_to t("admin.exam.table.view"),
+                admin_exam_path(exam), class: "btn btn-primary" %></td>
+              <td><%= link_to t("delete"), [:admin, exam], method: :delete,
+                data: {confirm: t("application.general.confirm_delete")},
+                class: "btn btn-danger glyphicon glyphicon-trash btn-width" %></td>
+            </tr>
+          <% end %>
         <% end %>
       </tbody>
     </table>

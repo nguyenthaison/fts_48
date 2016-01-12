@@ -14,7 +14,11 @@
           <%= f.select :subject_id,
             options_from_collection_for_select(@subjects, "id", "name"),
             class: "form-control button" %>
-          <%= f.submit t(".btn_create"), class: "btn btn-primary" %>
+          <% if @subjects.size == 0 %>
+            <%= f.submit t(".btn_create"), class: "btn btn-primary disabled" %>
+          <% else%>
+            <%= f.submit t(".btn_create"), class: "btn btn-primary" %>
+          <% end %>
         <% end %>
       </div>
       <h3><%= t ".title" %></h3>

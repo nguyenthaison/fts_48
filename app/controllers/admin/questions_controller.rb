@@ -15,7 +15,8 @@ class Admin::QuestionsController < ApplicationController
   end
 
   def create
-    if @question.update_attributes question_params
+    @question = Question.new question_params
+    if @question.save
       flash[:success] = t "admin.question.flash_create_question_success"
       redirect_to admin_questions_path
     else
