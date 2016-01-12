@@ -19,6 +19,7 @@ gem "friendly_id"
 gem "omniauth"
 gem "omniauth-facebook"
 gem "whenever", require: false
+gem "shareable"
 
 group :development, :test do
   gem "byebug"
