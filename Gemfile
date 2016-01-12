@@ -15,6 +15,7 @@ gem "kaminari"
 gem "config"
 gem "sidekiq"
 gem "delayed_job_active_record"
+gem "friendly_id"
 
 group :development, :test do
   gem "byebug"

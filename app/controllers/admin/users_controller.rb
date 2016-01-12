@@ -1,5 +1,5 @@
 class Admin::UsersController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource find_by: :slug
 
   def index
     @users = @users.normal.page(params[:page]).per 10
