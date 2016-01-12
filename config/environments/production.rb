@@ -76,4 +76,5 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.omniauth :facebook, "155898841447508", "8a71d99f2f3327ebe2b82acb0fdbf129"
 end

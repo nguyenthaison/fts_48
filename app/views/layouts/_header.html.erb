@@ -36,6 +36,7 @@
         <% else %>
           <li><%= link_to t("application.general.home"), root_path %></li>
           <li><%= link_to t("users.sign_up.title"), new_user_registration_path %></li>
+          <li><%= link_to t("application.general.facebook"), user_omniauth_authorize_path(:facebook) %></li>
           <li><%= link_to t("users.sign_in.title"), new_user_session_path %></li>
         <% end %>
   </div>

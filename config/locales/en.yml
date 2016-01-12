@@ -12,6 +12,8 @@ en:
       account: "Account"
       exam: "Exams"
       question: "Questions"
+      facebook: "Sign in with Facebook"
+      fb: "Facebook"
   staticpages:
     home: "Welcome to the Fts Project Framgia"
     at: "at"
