@@ -1,4 +1,6 @@
 class Exam < ActiveRecord::Base
+  TIME_PER_EXAM = 28800
+
   enum status: [:start,:testing, :unchecked,:checked]
 
   belongs_to :subject
@@ -9,7 +11,8 @@ class Exam < ActiveRecord::Base
   accepts_nested_attributes_for :results
 
   before_create :init_exam
-  after_create :send_exam_message
+  after_update :send_exam_message
+  after_create :delay_exam_create
 
   def change_status_after_start
     if self.start?
@@ -28,6 +31,25 @@ class Exam < ActiveRecord::Base
     self.duration*60 - self.spent_time
   end
 
+  def send_exam_message
+    HardWorker.perform_async self.id if self.checked?
+  end
+
+  def check_time_exam
+    if (Time.zone.now - self.created_at).to_i >= Exam::TIME_PER_EXAM
+      return true
+    else
+      return false
+    end
+  end
+
+  def delay_exam_create
+    if check_time_exam && self.start?
+      UserNotifier.delay_exam_when_create(self).deliver_now
+    end
+  end
+  handle_asynchronously :delay_exam_create, run_at: Proc.new { 8.hours.from_now }
+
   private
   def init_exam
     self.spent_time = 0
@@ -38,7 +60,4 @@ class Exam < ActiveRecord::Base
     end
   end
 
-  def send_exam_message
-    HardWorker.perform_async self.id
-  end
 end

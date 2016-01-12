@@ -11,4 +11,10 @@ class UserNotifier < ApplicationMailer
     mail to: @user.email, subject: t("subject_mailer.title")
   end
 
+  def delay_exam_when_create exam
+    @user = exam.user
+    @exam = exam
+    mail to: @user.email, subject: t("exam_mailer.title")
+  end
+
 end
