@@ -16,6 +16,8 @@ gem "config"
 gem "sidekiq"
 gem "delayed_job_active_record"
 gem "friendly_id"
+gem "omniauth"
+gem "omniauth-facebook"
 
 group :development, :test do
   gem "byebug"
