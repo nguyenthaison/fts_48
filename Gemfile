@@ -22,6 +22,12 @@ gem "whenever", require: false
 gem "shareable"
 
 group :development, :test do
+  gem "shoulda-matchers", "~> 3.0"
+  gem "capybara"
+  gem "rspec-collection_matchers"
+  gem "faker"
+  gem "rspec-rails", "~> 3.0"
+  gem "factory_girl_rails"
   gem "byebug"
 end
 
