@@ -85,6 +85,9 @@ en:
       title: "Question"
       btn_edit: "Edit"
       btn_del: "Delete"
+    flash:
+      create_success: "Create question success"
+      create_fail: "Create question fail"
   exams:
     index:
       title: "Examination List"

@@ -17,8 +17,10 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new question_params
     if @question.save
+      flash[:success] = t "questions.flash.success"
       redirect_to user_questions_path
     else
+      flash[:error] = t "questions.flash.create_fail"
       render :new
     end
   end
@@ -44,7 +46,7 @@ class QuestionsController < ApplicationController
     else
       flash.now[:danger] = t ".error"
     end
-    redirect_to user_questions
+    redirect_to user_questions_path
   end
 
   private
