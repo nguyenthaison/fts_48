@@ -88,6 +88,8 @@ en:
     flash:
       create_success: "Create question success"
       create_fail: "Create question fail"
+    update:
+      success: "Update Success"
   exams:
     index:
       title: "Examination List"
