@@ -14,6 +14,6 @@ Rails.application.routes.draw do
     resources :questions
     resources :users
     resources :subjects
-    resources :activities
+    resources :activities, only: [:index]
   end
 end
